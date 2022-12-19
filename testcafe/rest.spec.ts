@@ -10,7 +10,8 @@ test("should do a GET", async (t) => {
   await t
     .expect(screen.findByRole('heading',{ name: 'Loading...' }).exists).ok('Page loaded')
     .click(screen.getByRole("button", { name: /fetch/i }))
-    .expect(screen.findByRole("heading", { name: 'Success' }).exists).ok('Data Fetch Success')
+    .wait(500)
+    .expect(screen.getByRole("heading", { name: 'Success' }).exists).ok('Data Fetch Success')
 });
 // test("should do a DELETE", async (t) => {
 //   await t
