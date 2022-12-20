@@ -1,41 +1,15 @@
 import { screen } from "@testing-library/testcafe";
 
-fixture("Rest").page`http://localhost:3000/account/login/test`;
+fixture("Rest").page`http://localhost:3000/account`;
 
-// test("heading", async t => {
-//   await t.expect(screen.findByText(/example app|loading/i).exists).ok();
-// });
-
-test("should do a GET", async (t) => {
+test("should navigate to /account2 page", async (t) => {
   await t
-    .expect(screen.findByRole('heading',{ name: 'Loading...' }).exists).ok('Page loaded')
-    .click(screen.getByRole("button", { name: /fetch/i }))
-    .wait(500)
-    .expect(screen.getByRole("heading", { name: 'Success' }).exists).ok('Data Fetch Success')
+    .expect(screen.findByRole('heading',{ name: 'Screen1' }).exists).ok('Page1 loaded')
+    .debug()
+    .click(screen.getByRole("button", { name: /navigate/i }))
+
+  // Navigate to the `/account2` screen
+  await t
+    .wait(1000)
+    .expect(screen.getByRole('heading',{ name: 'Screen2' }).exists).ok('Page2 loaded')
 });
-// test("should do a DELETE", async (t) => {
-//   await t
-//     .expect(screen.findAllByRole("heading", { name: /foo|bar/ }).count)
-//     .eql(2)
-//     .hover(screen.findByRole("heading", { name: "foo" }))
-//     .click(screen.findByRole("button", { name: /done/i }))
-//     .expect(screen.findAllByRole("heading", { name: /foo|bar/ }).count)
-//     .eql(1);
-// });
-// test("should do a POST", async (t) => {
-//   await t
-//     .typeText(screen.findByRole("textbox"), "baz")
-//     .pressKey("enter")
-//     .expect(screen.findByRole("heading", { name: "baz" }).exists)
-//     .ok();
-// });
-//
-// test("should do a PUT", async (t) => {
-//   await t
-//     .hover(screen.findByRole("heading", { name: "bar" }))
-//     .click(screen.findByRole("button", { name: /edit/i }))
-//     .typeText(screen.findByDisplayValue("bar"), "qux")
-//     .pressKey("enter")
-//     .expect(screen.findByRole("heading", { name: "barqux" }).exists)
-//     .ok();
-// });
