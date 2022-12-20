@@ -84,9 +84,7 @@ self.addEventListener('message', async function (event) {
   }
 })
 
-console.log('registered')
 self.addEventListener('fetch', function (event) {
-  console.log('amazing')
   const { request } = event
   const accept = request.headers.get('accept') || ''
 
