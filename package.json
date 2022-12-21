@@ -17,7 +17,6 @@
   "dependencies": {
     "@graphql-tools/mock": "^6.0.15",
     "@graphql-tools/schema": "^6.0.15",
-    "@testing-library/testcafe": "^5.0.0",
     "@walmartlabs/json-to-simple-graphql-schema": "^2.0.1",
     "graphql": "^15.3.0",
     "json-server": "^0.16.1",
@@ -30,6 +29,7 @@
     "testcafe": "2.2.0-rc.1"
   },
   "devDependencies": {
+    "@testing-library/testcafe": "^5.0.0",
     "@types/jest": "^26.0.3",
     "@types/node": "^14.0.26",
     "@types/node-fetch": "^2.5.7",
