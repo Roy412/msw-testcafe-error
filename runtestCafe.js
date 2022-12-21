@@ -7,7 +7,14 @@ const sslOptions = {
 };
 
 (async function () {
-  const testcafe = await createTestCafe("localhost", 1337, 1338, sslOptions);
+  const testcafe = await createTestCafe(
+    {
+      hostname: 'localhost',
+      port1:    1337,
+      port2:    1338,
+      // experimentalProxyless: true,
+      sslOptions,
+    });
   
   const runner = process.argv.includes("--live")
   ? testcafe.createLiveModeRunner()
