@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/testcafe";
 
-fixture("Rest").page`http://localhost:3000/account/login/test`;
+fixture("Rest").page`http://localhost:3000/`;
 
 test("should do a GET", async (t) => {
   await t
